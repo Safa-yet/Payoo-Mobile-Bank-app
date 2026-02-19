@@ -19,11 +19,11 @@
 </head>
 <body class="max-w-md mx-auto  min-h-screen bg-[#F4F5F7]">
     
-<nav class="navbar bg-base-100 justify-between shadow-sm py-2.5">
+<nav class="navbar bg-base-100 justify-between shadow-sm py-2.5 sticky top-0 z-10">
   <div class="flex gap-3" >
-        <img src="./assets/logo.png" alt="" class="w-16">
+        <img src="./assets/logo.png" alt="" class="w-16 cursor-pointer" onclick="showOnly('lastest-payment')">
         <div>
-            <h1 class="font-extrabold text-xl ">$45000</h1>
+            <h1 class="font-extrabold text-xl ">$ <span id="balance">45000</span></h1>
             <h2 class="text-neutral-500 font-light">Available Balance</h2>
         </div>
 
@@ -44,80 +44,253 @@
 
     <!-- grid -->
 
-    <div class="grid grid-cols-3 my-4 gap-2.5">
+      <div class="grid grid-cols-3 my-4 gap-2.5">
+        <div
+          class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white hover:bg-[#d0ccf083] cursor-pointer"
+        onclick="showOnly('add-money')"
+          >
+          <img src="./assets/opt-1.png" alt="" />
+          <p>Add Money</p>
+        </div>
+        <div
+          class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer hover:bg-[#d0ccf083]"
+          onclick="showOnly('cash-out')"
+        >
+          <img src="./assets/opt-2.png" alt="" />
+          <p>Cashout</p>
+        </div>
+        <div
+          class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer hover:bg-[#d0ccf083]"
+        >
+          <img src="./assets/opt-3.png" alt="" />
+          <p>Transfer Money</p>
+        </div>
+        <div
+          class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer hover:bg-[#d0ccf083]"
+        >
+          <img src="./assets/opt-4.png" alt="" />
+          <p>Get Bonus</p>
+        </div>
+        <div
+          class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer hover:bg-[#d0ccf083]"
+        >
+          <img src="./assets/opt-5.png" alt="" />
+          <p>Pay Bill</p>
+        </div>
+        <div
+          class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer hover:bg-[#d0ccf083]"
+          onclick="showOnly('transition-container')"
+        >
+          <img src="./assets/opt-6.png" alt="" />
+          <p>Transactions</p>
+        </div>
+      </div>
 
-        <div class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer" onclick="window.location.assign('./addmoney.html')"> 
-            <img src="./assets/opt-1.png" alt="" >
-            <p>Add Money</p>
-        </div>
-        <div class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer" onclick="window.location.assign('./cashout.html')"> 
-            <img src="./assets/opt-2.png" alt="" >
-            <p>Cashout</p>
-        </div>
-        <div class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer"> 
-            <img src="./assets/opt-3.png" alt="" >
-            <p>Transfer Money</p>
-        </div>
-        <div class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer"> 
-            <img src="./assets/opt-4.png" alt="" >
-            <p>Get Bonus</p>
-        </div>
-        <div class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer"> 
-            <img src="./assets/opt-5.png" alt="" >
-            <p>Pay Bill</p>
-        </div>
-        <div class="px-5 py-5 flex flex-col items-center text-center justify-center border border-black/20 rounded-xl bg-white cursor-pointer"> 
-            <img src="./assets/opt-6.png" alt="" >
-            <p>Transactions</p>
-        </div>
-
-    </div>
 
 
 
     <!-- history List -->
+<section id="lastest-payment">
 
-    <ul class="list  py-4  space-y-2">
-  
-<div class="flex justify-between">
-    <h1 class="text-xl font-semibold">Lastest Payment</h1>
-    <p class="text-neutral-500">View more</p>
-</div>
-  
-  <li class="list-row  rounded-xl bg-white">
-    <div ><img class="size-10 rounded-box" src="./assets/opt-1.png"/></div>
-    <div>
-      <div>Dio Lupa</div>
-      <div class="text-xs uppercase font-semibold opacity-60">Remaining Reason</div>
-    </div>
-   
-    <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
-  </li>
-  
-  <li class="list-row rounded-xl bg-white">
-    <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/4@94.webp"/></div>
-    <div>
-      <div>Ellie Beilish</div>
-      <div class="text-xs uppercase font-semibold opacity-60">Bears of a fever</div>
-    </div>
-   
-    <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
-  </li>
-  
-  <li class="list-row rounded-xl bg-white">
-    <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/3@94.webp"/></div>
-    <div>
-      <div>Sabrino Gardener</div>
-      <div class="text-xs uppercase font-semibold opacity-60">Cappuccino</div>
-    </div>
-   
-    <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
-  </li>
-  
+  <div class="flex justify-between">
+      <h1 class="text-xl font-semibold">Lastest Payment</h1>
+      <p class="text-neutral-500">View more</p>
+  </div>
+  <ul class="list  py-4  space-y-2 " id="lastest-payment">
+
+
+<li class="list-row  rounded-xl bg-white">
+  <div ><img class="size-10 rounded-box" src="./assets/opt-1.png"/></div>
+  <div>
+    <div class="font-semibold">Dio Lupa</div>
+    <div class="text-xs  font-semibold opacity-90">Remaining Reason  </div>
+  </div>
+ 
+  <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
+</li>
+
+<li class="list-row rounded-xl bg-white">
+  <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/4@94.webp"/></div>
+  <div>
+    <div>Ellie Beilish</div>
+    <div class="text-xs uppercase font-semibold opacity-60">Bears of a fever</div>
+  </div>
+ 
+  <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
+</li>
+
+<li class="list-row rounded-xl bg-white">
+  <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/3@94.webp"/></div>
+  <div>
+    <div>Sabrino Gardener</div>
+    <div class="text-xs uppercase font-semibold opacity-60">Cappuccino</div>
+  </div>
+ 
+  <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
+</li>
+
 </ul>
+
+
+</section>
+<!--================
+   Add Money
+   ================= -->
+      <div class="mt-8 hidden" id="add-money">
+        <h1 class="text-lg font-semibold">Add Money</h1>
+        <div class="card bg-white w-full shadow-lg mt-2 rounded-3xl">
+          <div class="card-body">
+            <fieldset class="fieldset space-y-4">
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Select A Bank</label
+                >
+                <br />
+                <select class="select select-neutral w-full rounded-full outline-0 border border-neutral-500/50" id="select-bank">
+                  <option disabled selected >Select Your Bank</option>
+                  <option >UCB United Commercial Bank</option>
+                  <option >EU west</option>
+                  <option >South East Asia</option>
+                </select>
+              </div>
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Bank Account Number</label
+                >
+                <input
+                  maxlength="11"
+                  id="add-account-number"
+                  type="text"
+                  inputmode="numeric"
+                  class="input rounded-full px-5 py-4 outline-0 w-full"
+                  placeholder="Enter 11 digit AC Number"
+                />
+              </div>
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Ammount To Add</label
+                >
+                <input
+                  id="add-ammount"
+                  type="number"
+                  class="input rounded-full px-5 py-4 outline-0 w-full"
+                  placeholder="Add Amount Number"
+                />
+              </div>
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Pin Number</label
+                >
+                <input
+                  maxlength="4"
+                  id="add-pin-number"
+                  type="password"
+                  class="input rounded-full px-5 py-4 outline-0 w-full"
+                  placeholder="Enter 4 digit pin number"
+                />
+              </div>
+
+              <button
+                class="btn btn-neutral mt-4 rounded-full text-lg"
+                id="add-money-btn"
+              >
+                Add Money
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+   <!--------------- 
+   Cash out 
+   ------------------->
+      <div class="mt-8 hidden" id="cash-out">
+        <h1 class="text-lg font-semibold">Cash Out</h1>
+        <div class="card bg-white w-full shadow-lg mt-2 rounded-3xl">
+          <div class="card-body">
+            <fieldset class="fieldset space-y-4">
+              
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Bank Account Number</label
+                >
+                <input
+                  maxlength="11"
+                  id="account-number"
+                  type="text"
+                  inputmode="numeric"
+                  class="input rounded-full px-5 py-4 outline-0 w-full"
+                  placeholder="Enter 11 digit AC Number"
+                />
+              </div>
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Ammount To Add</label
+                >
+                <input
+                  id="ammount-number"
+                  type="number"
+                  class="input rounded-full px-5 py-4 outline-0 w-full"
+                  placeholder="Add Amount Number"
+                />
+              </div>
+              <div class="space-y-3">
+                <label class="label text-[16px] font-medium text-neutral-500"
+                  >Pin Number</label
+                >
+                <input
+                  maxlength="4"
+                  id="cashout-pin-number"
+                  type="password"
+                  class="input rounded-full px-5 py-4 outline-0 w-full"
+                  placeholder="Enter 4 digit pin number"
+                />
+              </div>
+
+              <button
+                class="btn btn-primary mt-4 rounded-full text-lg"
+                id="withdraw-btn"
+              >
+                Withdraw Money
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Transition -->
+
+      <section id="transition-container" class="hidden">
+
+        <div class="flex justify-between">
+          <h1 class="text-xl font-semibold">Lastest Payment</h1>
+          <p class="text-neutral-500">View more</p>
+        </div>
+
+        <ul class="list  py-4  space-y-2 " id="history-payment-list">
+  
+  
+  
+  
+  
+  
+  </ul>
+      </section>
+
+
+
+    
 
 
 
 </main>
+
+<script src="js/home.js"></script>
+<script src="js/common.js"></script>
+    <script src="js/cashout.js"></script>
+    <script src="js/addmoney.js"></script>
+    <script src="js/history.js"></script>
+
 </body>
 </html>
