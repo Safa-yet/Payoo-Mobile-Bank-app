@@ -8,7 +8,7 @@ let pin = document.getElementById('pin-number').value;
 
 let alertMsg =document.getElementById('alert-msg')
 
-    if(userNum == "01612554864" && pin == "2846"){
+    if(userNum == accNum() && pin == pinNum()){
         alertMsg.style.display ='flex';
         window.location.assign ('./home.html')
     }else{

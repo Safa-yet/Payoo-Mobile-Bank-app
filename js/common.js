@@ -6,7 +6,7 @@ function accNum(){
 }
 
 function pinNum(){
-    let pin = '2846';
+    let pin = '1234';
     return pin;
 }
 
